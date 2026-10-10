@@ -14,3 +14,11 @@ list (author, source, license) is in ATTRIBUTION.md.
 
 None: every bundled asset is original to GridCraft. Builds made with craft-fonts
 (CRAFT_FONTS_DIR) embed the fonts listed in ATTRIBUTION.md under the SIL Open Font License 1.1.
+
+--------------------------------------------------------------------------------
+Modified by The Agent Factory for Claude Academy: rebranding only (see BRANDING.md).
+This modified version is published as "Atelier Sheets". It is based on GridCraft by the
+ArtCraft team (https://github.com/storytold/gridcraft). It is not an ArtCraft product and is not
+affiliated with or endorsed by the ArtCraft team, Adobe or Microsoft. The ArtCraft name and
+marks have been removed as required by docs/brand/LICENSE-brand.txt of the original project.
+All original copyright notices and the MIT and Apache-2.0 licenses are kept unchanged.

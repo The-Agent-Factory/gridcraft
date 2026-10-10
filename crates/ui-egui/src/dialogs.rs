@@ -1,3 +1,4 @@
+// Modified by The Agent Factory for Claude Academy: rebranding only (see BRANDING.md).
 //! Dialogs. Simple dialogs are forms (fields → a command with params); Format Cells, Insert
 //! Function, Find & Replace, Sort, Name Manager and the command palette are custom.
 //!
@@ -504,7 +505,7 @@ impl Dialog {
             "commandSearch" => Dialog::custom("commandSearch", "Search Commands", json!({})),
             "agents" => Dialog::custom("agents", "Agent Control", json!({})),
             "about" => {
-                let mut d = Dialog::custom("about", "About GridCraft", json!({}));
+                let mut d = Dialog::custom("about", "About Atelier Sheets", json!({}));
                 d.tab = match p("tab").as_str() {
                     Some(t @ ("Contributors" | "Models")) => t.to_string(),
                     _ => "About".into(),
@@ -552,7 +553,7 @@ impl Dialog {
             "pickList" => Dialog::custom("pickList", "Pick From List", json!({})),
             "saveCopy" => Dialog::custom("saveCopy", "Save a Copy", json!({"format": p("format")})),
             "saveChanges" => Dialog::custom("saveChanges", "Save Changes?", json!({"title": p("title")})),
-            "start" => Dialog::custom("start", "GridCraft", json!({})),
+            "start" => Dialog::custom("start", "Atelier Sheets", json!({})),
             "comments" => {
                 app.grid.pane = Some("comments".into());
                 return None;
@@ -915,12 +916,17 @@ fn about(ui: &mut egui::Ui, d: &mut Dialog) {
         "Contributors" => crate::credits::contributors_ui(ui),
         "Models" => crate::credits::models_ui(ui),
         _ => {
-            ui.heading("GridCraft");
+            ui.heading("Atelier Sheets");
             ui.label(format!("Version {}", env!("CARGO_PKG_VERSION")));
             ui.add_space(4.0);
-            ui.label("A clean-room, open-source, Rust-native spreadsheet. Part of ArtCraft.");
-            ui.hyperlink_to("getartcraft.com/apps/gridcraft", "https://getartcraft.com/apps/gridcraft");
-            ui.hyperlink_to("Join the ArtCraft Discord", "https://discord.gg/artcraft");
+            ui.label("A clean-room, open-source, Rust-native spreadsheet.");
+            ui.label("Free preview from Claude Academy.");
+            ui.label(
+                egui::RichText::new("Based on GridCraft by the ArtCraft team (github.com/storytold/gridcraft). Not affiliated with the ArtCraft team, Adobe or Microsoft.")
+                    .small(),
+            );
+            ui.hyperlink_to("Claude Academy website", "https://claudeacademy.ca");
+            ui.hyperlink_to("Claude Academy community", "https://www.skool.com/claudeacademy");
         }
     }
 }

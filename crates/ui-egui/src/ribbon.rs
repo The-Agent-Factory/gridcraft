@@ -1,3 +1,4 @@
+// Modified by The Agent Factory for Claude Academy: rebranding only (see BRANDING.md).
 //! Title bar (Quick Access Toolbar), ribbon tabs and ribbon groups, and keyboard shortcuts.
 
 use egui::{Align2, Color32, Key, Modifiers, Rect, Sense, Stroke, StrokeKind, Ui, pos2, vec2};
@@ -1583,7 +1584,7 @@ fn automate(app: &mut SheetApp, ui: &mut Ui) {
     if big_button(ui, Icon::Script, "Action\nJournal", "Every command run in this session (replayable)", false).clicked() {
         app.open_dialog("journal", json!({}));
     }
-    if big_button(ui, Icon::Script, "About\nGridCraft", "Version, contributors and the AI models that helped", false).clicked() {
+    if big_button(ui, Icon::Script, "About\nAtelier Sheets", "Version, contributors and the AI models that helped", false).clicked() {
         app.open_dialog("about", json!({}));
     }
 }
